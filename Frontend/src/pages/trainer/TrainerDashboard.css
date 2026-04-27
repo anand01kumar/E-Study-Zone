@@ -1,0 +1,43 @@
+/* Sidebar Width Transitions */
+.sidebar-expanded {
+  width: 250px;
+  transition: width 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar-collapsed {
+  width: 80px;
+  transition: width 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Fixed width for icons so text aligns perfectly when expanded */
+.icon-width {
+  min-width: 24px;
+}
+
+/* Custom Hover effect for Nav Links (Bootstrap doesn't cover dark sidebar hovers natively) */
+.nav-link:not(.bg-primary):hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+
+.nav-link.bg-primary:hover {
+  background-color: rgba(13, 110, 253, 0.9) !important;
+}
+
+/* Responsive: Sidebar collapse behavior on mobile */
+@media (max-width: 768px) {
+  .sidebar-collapsed {
+    width: 0;
+    padding: 0;
+    border: none !important;
+  }
+  .sidebar-expanded {
+    position: absolute;
+    z-index: 1050; /* Stay above main content */
+    height: 100vh;
+  }
+}
