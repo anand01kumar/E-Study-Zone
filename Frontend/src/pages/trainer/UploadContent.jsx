@@ -236,7 +236,7 @@ const UploadContent = () => {
                             {/* Actions */}
                             <div className="d-flex gap-2">
                               <a 
-                                href={`http://localhost:5000/api/${item.file}`} 
+                                href={`https://e-study-zone-fw6r.onrender.com/api/${item.file}`} 
                                 target="_blank" 
                                 rel="noreferrer" 
                                 className="btn btn-sm btn-outline-primary"
