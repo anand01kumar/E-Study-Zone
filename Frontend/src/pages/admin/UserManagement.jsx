@@ -27,7 +27,7 @@ const UserManagement = () => {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
 
-      const res = await axios.get('http://localhost:5000/api/admin/users', { params, ...config });
+      const res = await axios.get('https://e-study-zone-fw6r.onrender.com/api/admin/users', { params, ...config });
       setUsers(res.data.data || []);
       setError('');
     } catch (err) {
@@ -61,7 +61,7 @@ const UserManagement = () => {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
 
-      await axios.delete(`http://localhost:5000/api/admin/users/${selectedUser._id}`, config);
+      await axios.delete(`https://e-study-zone-fw6r.onrender.com/api/admin/users/${selectedUser._id}`, config);
       setSuccess(`"${selectedUser.name}" has been deleted successfully.`);
       setShowModal(false);
       fetchUsers(); // Refresh list

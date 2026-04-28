@@ -25,7 +25,7 @@ const ContentManagement = () => {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
 
-      const res = await axios.get('http://localhost:5000/api/admin/content', { params, ...config });
+      const res = await axios.get('https://e-study-zone-fw6r.onrender.com/api/admin/content', { params, ...config });
       setContents(res.data.data || []);
       setError('');
     } catch (err) {
@@ -59,7 +59,7 @@ const ContentManagement = () => {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
 
-      await axios.delete(`http://localhost:5000/api/admin/content/${selectedContent._id}`, config);
+      await axios.delete(`https://e-study-zone-fw6r.onrender.com/api/admin/content/${selectedContent._id}`, config);
       setSuccess(`Skill "${selectedContent.skillId?.skill}" deleted successfully.`);
       setShowModal(false);
       fetchContent(); // Refresh list

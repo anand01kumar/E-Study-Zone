@@ -52,7 +52,7 @@ const ChangePasswords = () => {
       
       const config = { headers: { Authorization: `Bearer ${token}` } };
 
-      const res = await axios.patch('http://localhost:5000/api/admin/change-password', {
+      const res = await axios.patch('https://e-study-zone-fw6r.onrender.com/api/admin/change-password', {
         id: adminId,
         currentPassword,
         newPassword

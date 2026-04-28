@@ -16,7 +16,7 @@ const HandshakeRequest = () => {
 
   const fetchHandshakes = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/handshake/learner/${userId}`);
+      const res = await axios.get(`https://e-study-zone-fw6r.onrender.com/api/handshake/learner/${userId}`);
       setHandshakes(res.data.data || []);
     } catch (err) {
       console.error("Error fetching handshakes:", err);
@@ -34,7 +34,7 @@ const HandshakeRequest = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/content/search', form);
+      const res = await axios.post('https://e-study-zone-fw6r.onrender.com/api/content/search', form);
       if (res.data.data?.length) {
         setData(res.data.data);
         setSuccess("Search completed successfully!");
@@ -50,7 +50,7 @@ const HandshakeRequest = () => {
 
   const sendRequest = async (item) => {
     try {
-      await axios.post(`http://localhost:5000/api/handshake/request/${item.userId._id}`, {
+      await axios.post(`https://e-study-zone-fw6r.onrender.com/api/handshake/request/${item.userId._id}`, {
         learnerId: userId,
         status: 'pending'
       });

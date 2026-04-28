@@ -17,7 +17,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/register/login", data);
+      const res = await axios.post("https://e-study-zone-fw6r.onrender.com/register/login", data);
       alert(res.data.msg);
       
       if (res.data.msg === "Login Successfully") {

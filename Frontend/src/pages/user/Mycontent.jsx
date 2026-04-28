@@ -11,7 +11,7 @@ const Mycontent = () => {
   const handlefetch = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:5000/api/content/getcontent/${userId}`);
+      const res = await axios.get(`https://e-study-zone-fw6r.onrender.com/api/content/getcontent/${userId}`);
       setData(res.data.data || []); 
     } catch (err) {
       console.error("Error fetching content:", err);

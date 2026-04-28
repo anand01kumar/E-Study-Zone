@@ -20,7 +20,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/register", data);
+      const res = await axios.post("https://e-study-zone-fw6r.onrender.com/register", data);
       alert(res.data.msg);
       if(res.status === 200 || res.status === 201) {
           navigate('/'); // Redirect to login after successful registration

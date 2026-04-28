@@ -28,7 +28,7 @@ const UploadContent = () => {
   // Fetch skills
   const handleFetchSkills = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/getskill/${userId}`);
+      const res = await axios.get(`https://e-study-zone-fw6r.onrender.com/api/getskill/${userId}`);
       setData(res.data.data || []);
     } catch (err) {
       console.error(err);
@@ -39,7 +39,7 @@ const UploadContent = () => {
   const handleFetchContents = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:5000/api/content/get/${userId}`);
+      const res = await axios.get(`https://e-study-zone-fw6r.onrender.com/api/content/get/${userId}`);
       setContents(res.data.data || []);
     } catch (err) {
       console.error(err);
@@ -72,7 +72,7 @@ const UploadContent = () => {
 
     setUploading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/content/upload', form, {
+      const res = await axios.post('https://e-study-zone-fw6r.onrender.com/api/content/upload', form, {
         headers: { 'Content-type': 'multipart/form-data' }
       });
       setSuccess(res.data.msg);
@@ -97,7 +97,7 @@ const UploadContent = () => {
   const handleDelete = async () => {
     if (!selectedContent) return;
     try {
-      const res = await axios.delete(`http://localhost:5000/api/content/delete/${selectedContent._id}`);
+      const res = await axios.delete(`https://e-study-zone-fw6r.onrender.com/api/content/delete/${selectedContent._id}`);
       setSuccess(res.data.msg);
       setShowModal(false);
       handleFetchContents(); // refresh list

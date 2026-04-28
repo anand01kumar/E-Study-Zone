@@ -16,7 +16,7 @@ const Profile = () => {
 
   const handleFetch = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/user/getuser/${userId}`);
+      const res = await axios.get(`https://e-study-zone-fw6r.onrender.com/api/user/getuser/${userId}`);
       setData(res.data.data);
       setFormData(res.data.data);
     } catch (er) {
@@ -35,7 +35,7 @@ const Profile = () => {
   const handleSave = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`http://localhost:5000/api/user/update/${userId}`, formData);
+      const res = await axios.put(`https://e-study-zone-fw6r.onrender.com/api/user/update/${userId}`, formData);
       setData(res.data.data);
       setShowModal(false);
     } catch (er) {

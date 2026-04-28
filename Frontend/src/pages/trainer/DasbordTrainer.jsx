@@ -11,8 +11,8 @@ const DasbordTrainer = () => {
 
   const handleFetch = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/user/count`);
-      const result = await axios.get(`http://localhost:5000/api/user/count/${role}`);
+      const res = await axios.get(`https://e-study-zone-fw6r.onrender.com/api/user/count`);
+      const result = await axios.get(`https://e-study-zone-fw6r.onrender.com/api/user/count/${role}`);
       setData({
         ...res.data,
         [`${role}Count`]: result.data.count
@@ -24,7 +24,7 @@ const DasbordTrainer = () => {
 
   const fetchContent = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/content/count/${userId}`);
+      const res = await axios.get(`https://e-study-zone-fw6r.onrender.com/api/content/count/${userId}`);
       setContent(res.data.count);
     } catch (err) {
       console.error("Error fetching content data:", err);

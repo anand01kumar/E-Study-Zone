@@ -23,7 +23,7 @@ const Skills = () => {
       return;
     }
     try {
-      const res = await axios.post("http://localhost:5000/api/skillss", data);
+      const res = await axios.post("https://e-study-zone-fw6r.onrender.com/api/skillss", data);
       window.alert(res.data.msg);
       fetchSkills();
       setData({ skill: '', description: '', userId });
@@ -35,7 +35,7 @@ const Skills = () => {
 
   const fetchSkills = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/getskill/${userId}`);
+      const res = await axios.get(`https://e-study-zone-fw6r.onrender.com/api/getskill/${userId}`);
       setSkills(res.data.data);
     } catch (err) {
       console.error(err);
@@ -45,7 +45,7 @@ const Skills = () => {
   const deleteSkill = async (id) => {
     if (window.confirm("Are you sure you want to delete this skill?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/skillss/${id}`);
+        await axios.delete(`https://e-study-zone-fw6r.onrender.com/api/skillss/${id}`);
         fetchSkills();
       } catch (err) {
         console.error(err);

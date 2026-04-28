@@ -16,7 +16,7 @@ const Handshake = () => {
   const handleFetch = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:5000/api/handshake/${userid}`);
+      const res = await axios.get(`https://e-study-zone-fw6r.onrender.com/api/handshake/${userid}`);
       setData(res.data.data || []);
     } catch (err) {
       console.error("Error fetching handshake requests:", err);
@@ -32,7 +32,7 @@ const Handshake = () => {
 
   const updateRequest = async (item) => {
     try {
-      await axios.patch(`http://localhost:5000/api/handshake/accept/${item._id}`);
+      await axios.patch(`https://e-study-zone-fw6r.onrender.com/api/handshake/accept/${item._id}`);
       showToast("Request accepted successfully!", "success");
       handleFetch();
     } catch {
@@ -42,7 +42,7 @@ const Handshake = () => {
 
   const rejectRequest = async (item) => {
     try {
-      await axios.patch(`http://localhost:5000/api/handshake/reject/${item._id}`);
+      await axios.patch(`https://e-study-zone-fw6r.onrender.com/api/handshake/reject/${item._id}`);
       showToast("Request rejected.", "warning");
       handleFetch();
     } catch {

@@ -16,7 +16,7 @@ const DashboardAdmin = () => {
         };
         
         // अगर बिना auth के है तो सिर्फ axios.get लिखें
-        const res = await axios.get('http://localhost:5000/api/admin/dashboard-stats', config);
+        const res = await axios.get('https://e-study-zone-fw6r.onrender.com/api/admin/dashboard-stats', config);
         
         if (res.data.data) {
           setStats(res.data.data);
